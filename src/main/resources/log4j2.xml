@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="OFF">
+    <Properties>
+        <Property name="directory">/usr/local/var/log/haoche-accumulated-score-service</Property>
+        <Property name="filename">info.log</Property>
+    </Properties>
+
+    <appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+
+        <RollingFile name="RollingInfoFile" fileName="${directory}/${filename}"
+                     filePattern="${directory}/$${date:yyyy-MM-dd}/info/%d{MM-dd-yyyy}-%i.log.gz">
+            <PatternLayout charset="UTF-8"
+                           pattern="%d{yyyy-MM-dd 'at' HH:mm:ss z} [%t] %-5level %logger{36} - %msg%xEx%n"/>
+            <!--<ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY"/>-->
+            <SizeBasedTriggeringPolicy size="50MB"/>
+        </RollingFile>
+
+        <RollingFile name="RollingTimerFile" fileName="${directory}/timer.log"
+                     filePattern="${directory}/$${date:yyyy-MM-dd}/timer/%d{MM-dd-yyyy}-%i.log.gz">
+            <PatternLayout charset="UTF-8"
+                           pattern="%d{yyyy-MM-dd 'at' HH:mm:ss z} [%t] %-5level %logger{36} - %msg%xEx%n"/>
+            <!--<ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY"/>-->
+            <SizeBasedTriggeringPolicy size="50MB"/>
+        </RollingFile>
+    </appenders>
+    <loggers>
+        <logger name="com.haoche.score" level="DEBUG" additivity="false">
+            <appender-ref ref="Console"/>
+        </logger>
+
+        <root level="DEBUG">
+            <appender-ref ref="Console"/>
+        </root>
+    </loggers>
+</configuration>

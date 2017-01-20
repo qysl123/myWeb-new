@@ -1,0 +1,9 @@
+build/*
+target/*
+.idea/
+*.iml
+*.swp
+
+
+log
+.DS_Store
