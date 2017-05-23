@@ -23,7 +23,7 @@ public class DateUtils {
     /**
      * 格式化date
      * 默认yyyy-MM-dd hh:mm:ss
-     * 
+     *  
      * @param date 时间
      * @return String
      */
