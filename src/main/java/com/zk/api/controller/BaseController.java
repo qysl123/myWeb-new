@@ -23,7 +23,7 @@ public class BaseController {
 
     private static final String SYSTEM_TIME_SERVICE = "systemTime";
 
-    static Logger logger = LoggerFactory.getLogger(BaseController.class);
+    private static Logger logger = LoggerFactory.getLogger(BaseController.class);
 
     protected Object handler(RequestWarper requestWarper) {
         try {

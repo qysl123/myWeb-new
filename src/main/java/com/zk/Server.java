@@ -27,6 +27,6 @@ public class Server {
 //        articleVote.getGroupArticles("programing", 1);
 //        SellGoods sellGoods = (SellGoods) applicationContext.getBean("sellGoods");
 //        sellGoods.listItem();
-        System.out.println(URLEncoder.encode("{\"userId\":\"16874943\",\"phone\":\"\",\"email\":\"a@a.com\",\"allonym\":\"xx\",\"realName\":\"\",\"nickname\":\"xx\",\"idnumber\":\"\",\"sex\":\"FEMALE\",\"status\":\"ACTIVE\",\"qq\":\"12345\",\"avatar\":\"http://tb.himg.baidu.com/sys/portrait/item/d765697435323679613cb0\"}"));
+        System.out.println(URLEncoder.encode("{\"sex\": \"1\"}"));
     }
 }
