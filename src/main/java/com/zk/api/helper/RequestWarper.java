@@ -13,7 +13,7 @@ public class RequestWarper {
     private String service;
     private String version;
     private String data;
-    private MultipartFile[] file;
+    private MultipartFile file;
     private String platform;
     private String sign;
     private String salt;
@@ -42,7 +42,7 @@ public class RequestWarper {
         return this;
     }
 
-    public RequestWarper setFile(MultipartFile[] file) {
+    public RequestWarper setFile(MultipartFile file) {
         this.file = file;
         return this;
     }
@@ -114,7 +114,7 @@ public class RequestWarper {
         return data;
     }
 
-    public MultipartFile[] getFile() {
+    public MultipartFile getFile() {
         return file;
     }
 
